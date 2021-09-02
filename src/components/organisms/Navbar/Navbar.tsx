@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
           <LogoSource />
         </Logo>
         <Expand onClick={toggleState}>
-          <ExpandBurger className={isExpanded ? 'active' : 'no'} />
+          <ExpandBurger className={isExpanded ? 'active' : 'no-active'} />
         </Expand>
         <Navigation isExpanded={isExpanded} />
       </Body>

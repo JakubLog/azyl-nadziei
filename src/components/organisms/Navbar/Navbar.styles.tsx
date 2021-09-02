@@ -4,8 +4,11 @@ import { themeProps } from 'assets/css/theme';
 export const Wrapper = styled.div`
   width: 100vw;
   height: 80px;
-  display: flex;
-  justify-content: center;
+  @media (min-width: 768px) {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const Body = styled.div`
@@ -17,6 +20,12 @@ export const Body = styled.div`
   align-items: center;
   justify-content: space-between;
   position: relative;
+  @media (min-width: 768px) {
+    width: 85%;
+    position: static;
+    border-radius: 0 0 125px 125px;
+    padding: 0 100px;
+  }
 `;
 
 export const Logo = styled.a``;
@@ -29,6 +38,9 @@ export const Expand = styled.div`
   justify-content: center;
   position: relative;
   cursor: pointer;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 export const ExpandBurger = styled.div`
   height: 4px;

@@ -6,10 +6,11 @@ export const theme = {
     blueLight: '#ACA8FF',
     blueLighten: '#D1C8FF',
     blackLight: 'rgba(0, 0, 0, 70%)',
+    black: '#000000',
     brown: '#422918'
   },
   shadows: {
-    primary: '0 5px 15px -7px #000000'
+    primary: '0 5px 15px -7px rgba(0, 0, 0, 25%)'
   }
 };
 
@@ -22,6 +23,7 @@ export interface themeProps {
       blueLight: string;
       blueLighten: string;
       blackLight: string;
+      black: string;
       brown: string;
     };
     shadows: {
