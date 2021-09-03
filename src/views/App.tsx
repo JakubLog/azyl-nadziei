@@ -2,8 +2,10 @@ import MainTemplate from 'components/templates/MainTemplate';
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Error from 'components/molecules/Error/Error';
+import { useError } from 'hooks/useError';
 
 const App: React.FC = () => {
+  const { error } = useError();
   return (
     <>
       <MainTemplate>
@@ -23,7 +25,7 @@ const App: React.FC = () => {
           <div>Contact path</div>
         </Route>
       </MainTemplate>
-      <Error message="error ddfskdkf sk fd f sd sdf ds  s fds f sdds dsd sdoejn tobnprj p" />
+      {error ? <Error message={error} /> : null}
     </>
   );
 };
