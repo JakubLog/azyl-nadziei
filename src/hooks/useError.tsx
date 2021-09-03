@@ -16,7 +16,7 @@ const ErrorProvider: React.FC = ({ children }) => {
     setError(message);
     setTimeout(() => {
       setError(null);
-    }, 6000);
+    }, 7000);
   };
 
   const value: contextProps = {

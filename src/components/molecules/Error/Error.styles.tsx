@@ -1,6 +1,17 @@
 import { themeProps } from 'assets/css/theme';
 import { Paragraph } from 'components/atoms/Paragraph/Paragraph';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const slideIn = keyframes`
+    from {
+        transform: translateX(-500%);
+    }
+`;
+const slideOut = keyframes`
+    to {
+        transform: translateX(500%);
+    }
+`;
 
 export const Wrapper = styled.div`
   padding: 15px 20px;
@@ -14,6 +25,7 @@ export const Wrapper = styled.div`
   border: 3px solid ${({ theme }: themeProps) => theme.colors.error};
   border-radius: 20px;
   box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
+  animation: ${slideIn} 2s forwards, ${slideOut} 2s 5s forwards;
   @media (max-width: 768px) {
     width: 350px;
   }
