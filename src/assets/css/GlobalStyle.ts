@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { themeProps } from './theme';
 
 export const GlobalStyles = createGlobalStyle`
     *, *::after, *::before {
@@ -13,6 +12,5 @@ export const GlobalStyles = createGlobalStyle`
     body {
         margin: 0;
         padding: 0;
-        color: ${({ theme }: themeProps) => theme.colors.blueDarken};
     }
 `;
