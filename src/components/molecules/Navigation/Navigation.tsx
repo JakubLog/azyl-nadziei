@@ -17,11 +17,17 @@ const Navigation: React.FC<props> = ({ isExpanded = false }) => {
     const currentWidth = itemWidth * 0.6;
     const readyX = itemX + itemWidth / 2 - currentWidth / 2;
     const readyY = itemY + itemHeight + 7;
+
     return { readyX, readyY, currentWidth };
+  };
+  const findActiveElement = () => {
+    if (links.current) {
+      return document.querySelector('.active-link');
+    }
   };
   const setInitialPosition = () => {
     if (links.current && indicator.current) {
-      const { readyX, readyY, currentWidth } = getPositionOf(links.current.children[0]);
+      const { readyX, readyY, currentWidth } = getPositionOf(findActiveElement());
       gsap.set(indicator.current, { x: readyX, y: readyY, width: currentWidth });
     }
   };
