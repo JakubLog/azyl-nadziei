@@ -14,6 +14,9 @@ export const Wrapper = styled.div`
   border: 3px solid ${({ theme }: themeProps) => theme.colors.error};
   border-radius: 20px;
   box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
+  @media (max-width: 768px) {
+    width: 350px;
+  }
 `;
 
 export const ErrorTitle = styled.p`
