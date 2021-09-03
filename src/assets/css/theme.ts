@@ -7,7 +7,8 @@ export const theme = {
     blueLighten: '#D1C8FF',
     blackLight: 'rgba(0, 0, 0, 70%)',
     black: '#000000',
-    brown: '#422918'
+    brown: '#422918',
+    error: 'red'
   },
   shadows: {
     primary: '0 5px 15px -7px rgba(0, 0, 0, 25%)'
@@ -25,6 +26,7 @@ export interface themeProps {
       blackLight: string;
       black: string;
       brown: string;
+      error: string;
     };
     shadows: {
       primary: string;
