@@ -12,6 +12,11 @@ const slideOut = keyframes`
         transform: translateX(500%);
     }
 `;
+const scale = keyframes`
+  to {
+    transform: scaleX(-100%);
+  }
+`;
 
 export const Wrapper = styled.div`
   padding: 15px 20px;
@@ -22,10 +27,21 @@ export const Wrapper = styled.div`
   width: 400px;
   height: 170px;
   background-color: white;
-  border: 3px solid ${({ theme }: themeProps) => theme.colors.error};
+  border: 4px solid ${({ theme }: themeProps) => theme.colors.error};
   border-radius: 20px;
   box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
   animation: ${slideIn} 2s forwards, ${slideOut} 2s 5s forwards;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: ${({ theme }: themeProps) => theme.colors.error};
+    opacity: 0.2;
+    z-index: -1;
+    animation: ${scale} 10s 2s forwards;
+    transform-origin: top left;
+  }
   @media (max-width: 768px) {
     width: 350px;
   }
