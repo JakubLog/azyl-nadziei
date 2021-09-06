@@ -10,7 +10,7 @@ const ErrorContext = createContext<contextProps>({
   dispatchError: (message: string) => console.error(message)
 });
 const ErrorProvider: React.FC = ({ children }) => {
-  const [error, setError] = useState<null | string>(null);
+  const [error, setError] = useState<null | string>('aa');
 
   const dispatchError = (message: string): void => {
     setError(message);
