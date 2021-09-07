@@ -11,7 +11,8 @@ export const theme = {
     error: 'red'
   },
   shadows: {
-    primary: '0 5px 15px -7px rgba(0, 0, 0, 25%)'
+    primary: '0 5px 15px -7px rgba(0, 0, 0, 25%)',
+    text: '0 3px 10px rgba(0, 0, 0, 0.3)'
   }
 };
 
@@ -30,6 +31,7 @@ export interface themeProps {
     };
     shadows: {
       primary: string;
+      text: string;
     };
   };
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Error from 'components/molecules/Error/Error';
 import { useError } from 'hooks/useError';
+import Home from './Home/Home';
 
 const App: React.FC = () => {
   const { error } = useError();
@@ -10,7 +11,7 @@ const App: React.FC = () => {
     <>
       <MainTemplate>
         <Route path="/" exact>
-          <div>Home path</div>
+          <Home />
         </Route>
         <Route path="/about">
           <div>About path</div>
