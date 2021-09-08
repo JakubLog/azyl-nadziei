@@ -11,7 +11,10 @@ export const Button = styled.button`
   border-radius: 10px;
   font-weight: bold;
   letter-spacing: 1px;
-  margin-top: 30px;
+  margin-top: 15px;
+  &:first-child {
+    margin-top: 20px;
+  }
   transition: background-color 0.3s linear;
   box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
   &:hover,

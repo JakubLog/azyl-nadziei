@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Title = styled.h2`
   color: ${({ theme }: themeProps) => theme.colors.blueDarken};
   text-shadow: ${({ theme }: themeProps) => theme.shadows.text};
-  font-size: 30px;
+  font-size: 40px;
   margin: 0;
   margin-bottom: 7px;
   @media (min-width: 768px) {
