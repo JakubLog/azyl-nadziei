@@ -8,7 +8,10 @@ export const Title = styled.h2`
   margin: 0;
   margin-bottom: 7px;
   @media (min-width: 768px) {
-    font-size: 90px;
+    font-size: 70px;
     margin-bottom: 15px;
+  }
+  @media (min-width: 1100px) {
+    font-size: 90px;
   }
 `;
