@@ -7,7 +7,10 @@ import ErrorProvider from 'hooks/useError';
 import { GraphQLClient, ClientContext } from 'graphql-hooks';
 
 const client = new GraphQLClient({
-  url: 'https://graphql.datocms.com/'
+  url: 'https://graphql.datocms.com/',
+  headers: {
+    Authorization: `Bearer ${process.env.REACT_APP_DATOCMS_TOKEN}`
+  }
 });
 
 const AppProviders: React.FC = ({ children }) => {
