@@ -4,15 +4,22 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/css/theme';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ErrorProvider from 'hooks/useError';
+import { GraphQLClient, ClientContext } from 'graphql-hooks';
+
+const client = new GraphQLClient({
+  url: 'https://graphql.datocms.com/'
+});
 
 const AppProviders: React.FC = ({ children }) => {
   return (
     <Router>
       <ErrorProvider>
-        <ThemeProvider theme={theme}>
-          <GlobalStyles />
-          {children}
-        </ThemeProvider>
+        <ClientContext.Provider value={client}>
+          <ThemeProvider theme={theme}>
+            <GlobalStyles />
+            {children}
+          </ThemeProvider>
+        </ClientContext.Provider>
       </ErrorProvider>
     </Router>
   );
