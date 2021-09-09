@@ -26,7 +26,7 @@ const NewPet: React.FC = () => {
       </Header>
       <ContainerPositioner>
         <Container>
-          <BackgroundImage src="https://picsum.photos/200" />
+          <BackgroundImage src="https://picsum.photos/2000" />
           <Description>
             <ContentWrapper>
               <DescriptionTitle>Migdał</DescriptionTitle>

@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   margin-bottom: 60px;
   padding-block: 35px;
   background-color: ${({ theme }: themeProps) => theme.colors.blueDarkenLow};
-  @media (min-width: 768px) {
+  @media (min-width: 1100px) {
     min-height: 100vh;
     background-color: unset;
   }
@@ -22,7 +22,7 @@ export const Header = styled.div`
   box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
   padding: 20px 30px;
   text-align: center;
-  @media (min-width: 768px) {
+  @media (min-width: 1100px) {
     box-shadow: none;
     padding: 0;
     background-color: unset;
@@ -35,7 +35,7 @@ export const StyledTitle = styled(Title)``;
 export const StyledSubTitle = styled(SubTitle)``;
 
 export const ContainerPositioner = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 1100px) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +58,7 @@ export const Container = styled.div`
   position: relative;
   min-height: 600px;
   overflow: hidden;
-  @media (min-width: 768px) {
+  @media (min-width: 1100px) {
     height: 500px;
     width: 65%;
     border-radius: 10px;
@@ -75,7 +75,7 @@ export const BackgroundImage = styled.img`
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  @media (min-width: 768px) {
+  @media (min-width: 1100px) {
     width: 500px;
     opacity: 0.8;
   }
@@ -86,11 +86,11 @@ export const Description = styled.div`
   left: 0;
   bottom: 0;
   background-color: rgba(44, 79, 236, 70%);
-  @media (min-width: 768px) {
+  @media (min-width: 1100px) {
     min-height: 100%;
     bottom: auto;
     top: 0;
-    width: 25%;
+    width: 30%;
   }
 `;
 
@@ -102,8 +102,8 @@ export const DescriptionTitle = styled(Title)`
   color: white;
   font-weight: 400;
   letter-spacing: 2px;
-  @media (min-width: 768px) {
-    font-size: 45px;
+  @media (min-width: 1100px) {
+    font-size: 40px;
     padding-left: 5px;
   }
 `;
@@ -113,7 +113,7 @@ export const StyledContent = styled(Content)`
   text-align: justify;
   font-weight: 700;
   line-height: 1.5;
-  @media (min-width: 768px) {
+  @media (min-width: 1100px) {
     font-weight: 400;
     font-size: 18px;
     line-height: 1.3;
@@ -129,8 +129,9 @@ export const StyledButton = styled(Button)`
   &:hover {
     background-color: rgba(209, 200, 255, 0.8);
   }
-  @media (min-width: 768px) {
+  @media (min-width: 1100px) {
     position: absolute;
     bottom: 0;
+    min-width: 100%;
   }
 `;
