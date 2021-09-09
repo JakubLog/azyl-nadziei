@@ -1,5 +1,6 @@
 export const theme = {
   colors: {
+    blueDarkenLow: 'rgba(44, 79, 236, 0.2)',
     blueDarken: '#2C4FEC',
     blueDark: '#5E6BFF',
     blue: '#8689FF',
@@ -19,6 +20,7 @@ export const theme = {
 export interface themeProps {
   theme: {
     colors: {
+      blueDarkenLow: string;
       blueDarken: string;
       blueDark: string;
       blue: string;
