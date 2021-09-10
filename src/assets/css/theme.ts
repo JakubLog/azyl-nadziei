@@ -1,5 +1,6 @@
 export const theme = {
   colors: {
+    blueDarkenLow: 'rgba(44, 79, 236, 0.2)',
     blueDarken: '#2C4FEC',
     blueDark: '#5E6BFF',
     blue: '#8689FF',
@@ -11,13 +12,15 @@ export const theme = {
     error: 'red'
   },
   shadows: {
-    primary: '0 5px 15px -7px rgba(0, 0, 0, 25%)'
+    primary: '0 5px 15px -2px rgba(0, 0, 0, 25%)',
+    text: '0 3px 10px rgba(0, 0, 0, 0.3)'
   }
 };
 
 export interface themeProps {
   theme: {
     colors: {
+      blueDarkenLow: string;
       blueDarken: string;
       blueDark: string;
       blue: string;
@@ -30,6 +33,7 @@ export interface themeProps {
     };
     shadows: {
       primary: string;
+      text: string;
     };
   };
 }
