@@ -10,6 +10,7 @@ interface props {
   title: string;
   subtitle: string;
   content?: JSX.Element;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   buttonContent: any;
 }
 
