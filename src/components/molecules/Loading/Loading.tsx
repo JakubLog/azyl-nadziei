@@ -46,6 +46,10 @@ export const Item = styled.div`
     height: 50%;
     background-color: ${({ theme }: themeProps) => theme.colors.blue};
   }
+  @media (min-width: 768px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 const Loading: React.FC = () => {

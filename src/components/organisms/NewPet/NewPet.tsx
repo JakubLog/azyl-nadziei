@@ -16,6 +16,7 @@ import {
   StyledButton
 } from './NewPet.styles';
 import { useHistory } from 'react-router-dom';
+import Loading from 'components/molecules/Loading/Loading';
 
 const NewPet: React.FC = () => {
   const query = `{allAnimals(first: 1) {id,name,description,image{url}}}`;
@@ -61,20 +62,22 @@ const NewPet: React.FC = () => {
         </StyledSubTitle>
       </Header>
       <ContainerPositioner>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <Container>
-            <BackgroundImage src={data.allAnimals[0].image.url} />
-            <Description>
-              <ContentWrapper>
-                <DescriptionTitle>{data.allAnimals[0].name}</DescriptionTitle>
-                <StyledContent>{data.allAnimals[0].description}</StyledContent>
-              </ContentWrapper>
-              <StyledButton onClick={() => history.push('/adoption')}>Czytaj więcej</StyledButton>
-            </Description>
-          </Container>
-        )}
+        <Container>
+          {loading ? (
+            <Loading />
+          ) : (
+            <>
+              <BackgroundImage src={data.allAnimals[0].image.url} />
+              <Description>
+                <ContentWrapper>
+                  <DescriptionTitle>{data.allAnimals[0].name}</DescriptionTitle>
+                  <StyledContent>{data.allAnimals[0].description}</StyledContent>
+                </ContentWrapper>
+                <StyledButton onClick={() => history.push('/adoption')}>Czytaj więcej</StyledButton>
+              </Description>
+            </>
+          )}
+        </Container>
       </ContainerPositioner>
     </Wrapper>
   );
