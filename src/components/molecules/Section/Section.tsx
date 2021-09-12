@@ -4,6 +4,7 @@ import { Title } from 'components/atoms/Title/Title';
 import { Button } from 'components/atoms/Button/Button';
 import { Wrapper, ImageWrapper, Image, BeforeImage, StyledSubTitle, StyledContent, Buttons } from './Section.styles';
 import { useHistory } from 'react-router-dom';
+
 interface props {
   direction: string;
   image?: string;

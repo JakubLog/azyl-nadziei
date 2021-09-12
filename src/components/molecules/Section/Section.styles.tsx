@@ -10,15 +10,14 @@ export const Wrapper = styled.div<{ direction: string }>`
   flex-direction: column;
   padding-inline: 35px;
   text-align: center;
-  &:not(:last-child) {
-    margin-bottom: 60px;
-  }
+  margin-bottom: 60px;
   @media (min-width: 768px) {
     min-height: 100vh;
     align-items: ${({ direction }) => (direction === 'left' ? 'flex-start' : 'flex-end')};
     ${({ direction }) => (direction === 'left' ? 'padding-left: 10%;' : 'padding-right: 10%;')};
     text-align: ${({ direction }) => (direction === 'left' ? 'left' : 'right')};
     position: relative;
+    margin-bottom: 0;
   }
 `;
 
