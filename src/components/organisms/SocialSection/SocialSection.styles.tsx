@@ -3,11 +3,13 @@ import { themeProps } from 'assets/css/theme';
 import { SubTitle } from 'components/atoms/SubTitle/SubTitle';
 
 export const Wrapper = styled.div`
+  margin-bottom: 50px;
   @media (min-width: 768px) {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
   }
 `;
 export const Section = styled.div`
