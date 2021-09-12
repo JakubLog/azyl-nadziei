@@ -3,16 +3,19 @@ import PropTypes from 'prop-types';
 import { Title } from 'components/atoms/Title/Title';
 import { Button } from 'components/atoms/Button/Button';
 import { Wrapper, ImageWrapper, Image, BeforeImage, StyledSubTitle, StyledContent, Buttons } from './Section.styles';
+import { useHistory } from 'react-router-dom';
 interface props {
   direction: string;
   image?: string;
   title: string;
   subtitle: string;
-  content: JSX.Element;
-  buttonContent: string[] | string;
+  content?: JSX.Element;
+  buttonContent: any;
 }
 
 const Section: React.FC<props> = ({ direction, image, title, subtitle, content, buttonContent }) => {
+  const history = useHistory();
+
   return (
     <Wrapper direction={direction}>
       {image && (
@@ -24,7 +27,13 @@ const Section: React.FC<props> = ({ direction, image, title, subtitle, content, 
       <Title>{title}</Title>
       <StyledSubTitle>{subtitle}</StyledSubTitle>
       <StyledContent>{content}</StyledContent>
-      <Buttons>{typeof buttonContent === 'string' ? <Button>{buttonContent}</Button> : buttonContent.map((txt) => <Button>{txt}</Button>)}</Buttons>
+      <Buttons>
+        {buttonContent?.to ? (
+          <Button onClick={() => history.push(buttonContent.to)}>{buttonContent.content}</Button>
+        ) : (
+          buttonContent.map(({ content, to }: { content: string; to: string }) => <Button onClick={() => history.push(to)}>{content}</Button>)
+        )}
+      </Buttons>
     </Wrapper>
   );
 };
