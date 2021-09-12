@@ -1,4 +1,5 @@
 import { Link } from 'components/atoms/Link/Link';
+import Loading from 'components/molecules/Loading/Loading';
 import Section from 'components/molecules/Section/Section';
 import Hero from 'components/organisms/Hero/Hero';
 import NewPet from 'components/organisms/NewPet/NewPet';

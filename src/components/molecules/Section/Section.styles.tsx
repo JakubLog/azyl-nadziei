@@ -10,7 +10,7 @@ export const Wrapper = styled.div<{ direction: string }>`
   flex-direction: column;
   padding-inline: 35px;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
   @media (min-width: 768px) {
     min-height: 100vh;
     align-items: ${({ direction }) => (direction === 'left' ? 'flex-start' : 'flex-end')};
