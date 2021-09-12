@@ -2,6 +2,7 @@ import { Link } from 'components/atoms/Link/Link';
 import Section from 'components/molecules/Section/Section';
 import Hero from 'components/organisms/Hero/Hero';
 import NewPet from 'components/organisms/NewPet/NewPet';
+import SocialSection from 'components/organisms/SocialSection/SocialSection';
 import React from 'react';
 
 const Home: React.FC = () => {
