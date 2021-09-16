@@ -7,6 +7,13 @@ import { SubTitle } from 'components/atoms/SubTitle/SubTitle';
 export const Wrapper = styled.div`
   position: relative;
   box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
+  @media (min-width: 1100px) {
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1000px;
+  }
 `;
 
 export const Header = styled.div`
@@ -19,11 +26,25 @@ export const Header = styled.div`
   @media (min-width: 768px) {
     padding: 75px 0 100px 0;
   }
+  @media (min-width: 1100px) {
+    display: block;
+    position: absolute;
+    left: 7%;
+    top: 0;
+    padding: 20px;
+    width: 500px;
+    height: 250px;
+    text-align: left;
+    box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
+  }
 `;
 export const StyledTitle = styled(Title)`
   color: white;
   @media (min-width: 768px) {
     font-size: 60px;
+  }
+  @media (min-width: 1100px) {
+    font-size: 50px;
   }
 `;
 export const StyledSubTitle = styled(SubTitle)`
@@ -46,6 +67,16 @@ export const ImageWrapper = styled.div`
   overflow: hidden;
   @media (min-width: 768px) {
     height: 700px;
+  }
+  @media (min-width: 1100px) {
+    position: absolute;
+    width: 500px;
+    height: 800px;
+    right: 12.5%;
+    top: 50%;
+    z-index: 10;
+    opacity: 1;
+    transform: translateY(-50%);
   }
 `;
 export const Image = styled.img`
@@ -71,6 +102,26 @@ export const Content = styled.div`
     width: 85%;
     height: 720px;
   }
+  @media (min-width: 1100px) {
+    width: 75%;
+    padding: 30px;
+    padding-right: 530px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
+    &::before {
+      content: '';
+      position: absolute;
+      right: -15px;
+      bottom: -55px;
+      height: 800px;
+      width: 500px;
+      background-color: rgba(44, 79, 236, 0.2);
+      box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
+    }
+  }
 `;
 export const InnerContent = styled.div`
   height: 100%;
@@ -89,5 +140,9 @@ export const StyledParagraph = styled(Paragraph)`
   overflow: hidden;
   @media (min-width: 768px) {
     line-height: 1.5;
+  }
+  @media (min-width: 1100px) {
+    -webkit-line-clamp: 21;
+    letter-spacing: 1px;
   }
 `;
