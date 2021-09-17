@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AboutSection from 'components/molecules/AboutSection/AboutSection';
 import { Wrapper, StyledLink } from './About.styles';
+import { useQuery } from 'graphql-hooks';
+import { useError } from 'hooks/useError';
+
+const query = `{allReports {year,file {url}}}`;
+const errMessage = 'Sorry, something went wrong! Please try again or contact with support.';
 
 const About: React.FC = () => {
+  const { data, loading, error } = useQuery(query);
+  const { dispatchError } = useError();
+  const [reports, setReports] = useState([]);
+
+  useEffect(() => {
+    if (error) dispatchError(errMessage);
+    else if (!loading) {
+      setReports(data.allReports);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading, error]);
   return (
     <Wrapper>
       <AboutSection
@@ -26,20 +42,20 @@ const About: React.FC = () => {
         title="Sprawozdania"
         subtitle="Fundacja Azyl Nadziei"
         content={
-          <ul>
-            <li>
-              <b>Sprawozdanie za rok 2020</b> | <StyledLink href="#">Sprawdź tutaj</StyledLink>
-            </li>
-            <li>
-              <b>Sprawozdanie za rok 2019</b> | <StyledLink href="#">Sprawdź tutaj</StyledLink>
-            </li>
-            <li>
-              <b>Sprawozdanie za rok 2018</b> | <StyledLink href="#">Sprawdź tutaj</StyledLink>
-            </li>
-            <li>
-              <b>Sprawozdanie za rok 2017</b> | <StyledLink href="#">Sprawdź tutaj</StyledLink>
-            </li>
-          </ul>
+          loading ? (
+            <p>Loading...</p>
+          ) : (
+            <ul>
+              {reports.map(({ year, file: { url } }: { year: string; file: { url: string } }) => (
+                <li>
+                  <b>Sprawozdanie za rok {year} </b> |{' '}
+                  <StyledLink target="_blank" href={url}>
+                    Sprawdź tutaj
+                  </StyledLink>
+                </li>
+              ))}
+            </ul>
+          )
         }
         imageSrc="https://picsum.photos/500"
       />
