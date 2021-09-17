@@ -31,6 +31,7 @@ export const Wrapper = styled.div`
   border-radius: 20px;
   box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
   animation: ${slideIn} 2s forwards, ${slideOut} 2s 5s forwards;
+  z-index: 1000;
   overflow: hidden;
   &::before {
     content: '';
