@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import Error from 'components/molecules/Error/Error';
 import { useError } from 'hooks/useError';
 import Home from './Home/Home';
+import About from './About/About';
 
 const App: React.FC = () => {
   const { error } = useError();
@@ -14,7 +15,7 @@ const App: React.FC = () => {
           <Home />
         </Route>
         <Route path="/about">
-          <div>About path</div>
+          <About />
         </Route>
         <Route path="/adoption">
           <div>Adoption path</div>
