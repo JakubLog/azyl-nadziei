@@ -1,9 +1,9 @@
 import { themeProps } from 'assets/css/theme';
 import styled from 'styled-components';
 
-export const Button = styled.button`
+export const Button = styled.button<{ isLight?: boolean }>`
   min-width: 175px;
-  background-color: ${({ theme }: themeProps) => theme.colors.blueDark};
+  background-color: ${({ theme, isLight }: themeProps) => (isLight ? theme.colors.blue : theme.colors.blueDark)};
   border: 0;
   padding: 12px;
   font-size: 16px;
@@ -15,12 +15,13 @@ export const Button = styled.button`
   &:first-child {
     margin-top: 20px;
   }
-  transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear, opacity 0.2s linear;
   box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
   &:hover,
   &:focus {
     cursor: pointer;
-    background-color: ${({ theme }: themeProps) => theme.colors.blueDarken};
+    background-color: ${({ theme, isLight }: themeProps) => (isLight ? theme.colors.blueDark : theme.colors.blueDarken)};
+    opacity: 1;
   }
   @media (min-width: 768px) {
     margin-top: 20px;

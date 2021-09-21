@@ -18,6 +18,7 @@ export const theme = {
 };
 
 export interface themeProps {
+  isLight?: boolean;
   theme: {
     colors: {
       blueDarkenLow: string;
