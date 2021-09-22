@@ -7,9 +7,11 @@ import Home from './Home/Home';
 import About from './About/About';
 import Adoption from './Adoption/Adoption';
 import Modal from 'components/organisms/Modal/Modal';
+import { useModal } from 'hooks/useModal';
 
 const App: React.FC = () => {
   const { error } = useError();
+  const { isOpen } = useModal();
   return (
     <>
       <MainTemplate>
@@ -30,16 +32,7 @@ const App: React.FC = () => {
         </Route>
       </MainTemplate>
       {error ? <Error message={error} /> : null}
-      {/* {isOpen ? <Modal title={title} content={content} /> : null} */}
-      <Modal
-        title="Klakier"
-        content={<div>aaa</div>}
-        buttons={[
-          { text: 'Wyjdź', onClick: () => alert('Uga buga') },
-          { text: 'Zaadoptuj', onClick: () => alert('Agu bugu') }
-        ]}
-        rightCorner={<div>Kotek, lat 3</div>}
-      />
+      {isOpen ? <Modal /> : null}
     </>
   );
 };

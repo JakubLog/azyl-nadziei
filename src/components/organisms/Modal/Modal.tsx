@@ -1,35 +1,24 @@
+import { useModal } from 'hooks/useModal';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { BackgroundColor, Wrapper, Buttons, Content, StyledTitle, StyledButton, RightCorner } from './Modal.styles';
 
-interface buttonProps {
-  text: string;
-  onClick: () => void;
-}
+const Modal: React.FC = () => {
+  const { closeModal, modal } = useModal();
 
-interface props {
-  title: string;
-  content: JSX.Element;
-  buttons?: buttonProps[];
-  rightCorner: JSX.Element;
-}
-
-const Modal: React.FC<props> = ({ title, content, buttons = [{ text: 'Wyjdź', onClick: () => alert('klozet') }], rightCorner }) => {
-  return (
+  return ReactDOM.createPortal(
     <>
       <BackgroundColor />
       <Wrapper>
-        <StyledTitle>{title}</StyledTitle>
-        <Content>{content}</Content>
+        <StyledTitle>{modal.title}</StyledTitle>
+        <Content>{modal.content}</Content>
         <Buttons>
-          {buttons.map((button, i) => (
-            <StyledButton onClick={button.onClick} isLight={i % 2 === 0 ? false : true}>
-              {button.text}
-            </StyledButton>
-          ))}
+          <StyledButton onClick={closeModal}>Wyjdź</StyledButton>
         </Buttons>
-        <RightCorner>{rightCorner}</RightCorner>
+        <RightCorner>{modal.rightCorner}</RightCorner>
       </Wrapper>
-    </>
+    </>,
+    document.body
   );
 };
 
