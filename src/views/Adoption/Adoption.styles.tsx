@@ -26,6 +26,7 @@ export const Icon = styled.div`
   justify-content: center;
   color: white;
   font-weight: 700;
+  box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
 `;
 export const Content = styled.p`
   letter-spacing: 1px;
