@@ -36,9 +36,11 @@ export const StyledTitle = styled(Title)`
   height: 100px;
   background-color: ${({ theme }: themeProps) => theme.colors.blue};
   padding: 20px 30px;
+  margin-bottom: 0px;
 `;
 export const Content = styled.div`
-  height: 460px;
+  position: relative;
+  height: 475px;
   padding-inline: 30px;
   padding-bottom: 15px;
   overflow: auto;

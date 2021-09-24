@@ -39,6 +39,10 @@ export const StyledButton = styled(Button)`
   min-width: 50%;
   opacity: 0.8;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 `;
 export const Buttons = styled.div`
   width: 100%;
