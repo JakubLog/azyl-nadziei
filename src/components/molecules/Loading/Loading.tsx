@@ -1,9 +1,13 @@
 import React from 'react';
 import { Wrapper, Item } from './Loading.styles';
 
-const Loading: React.FC = () => {
+interface props {
+  fullView?: boolean;
+}
+
+const Loading: React.FC<props> = ({ fullView }) => {
   return (
-    <Wrapper>
+    <Wrapper fullView={fullView}>
       <Item />
     </Wrapper>
   );

@@ -1,8 +1,9 @@
 import Animal from 'components/molecules/Animal/Animal';
+import Loading from 'components/molecules/Loading/Loading';
 import { useQuery } from 'graphql-hooks';
 import { useError } from 'hooks/useError';
 import React, { useEffect, useState } from 'react';
-import { Wrapper } from './Animals.styles';
+import { Wrapper, StyledTitle } from './Animals.styles';
 
 const Animals: React.FC = () => {
   const { dispatchError } = useError();
@@ -25,19 +26,25 @@ const Animals: React.FC = () => {
 
   return (
     <Wrapper>
-      {animals.map(({ name, id, disabled, image: { url: imgUrl }, typeofanimal: type, age, weight, breed, description }) => (
-        <Animal
-          key={id}
-          description={description}
-          img={imgUrl}
-          name={name}
-          race={breed}
-          weight={weight}
-          type={type}
-          age={age}
-          isDisabled={disabled}
-        />
-      ))}
+      {loading ? (
+        <Loading fullView />
+      ) : animals.length > 0 ? (
+        animals.map(({ name, id, disabled, image: { url: imgUrl }, typeofanimal: type, age, weight, breed, description }) => (
+          <Animal
+            key={id}
+            description={description}
+            img={imgUrl}
+            name={name}
+            race={breed}
+            weight={weight}
+            type={type}
+            age={age}
+            isDisabled={disabled}
+          />
+        ))
+      ) : (
+        <StyledTitle>Brak potrzebujących domów zwierząt! 🥳</StyledTitle>
+      )}
     </Wrapper>
   );
 };
