@@ -31,6 +31,7 @@ export const BackgroundImage = styled.img`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
 `;
 export const StyledButton = styled(Button)`
   padding: 0;
