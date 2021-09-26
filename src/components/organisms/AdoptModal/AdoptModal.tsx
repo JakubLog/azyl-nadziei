@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper, StyledButton, Information, StyledLoadingIcon, LoadingWrapper } from './AdoptModal.styles';
 import { useForm } from 'react-hook-form';
@@ -8,7 +8,6 @@ import axios from 'axios';
 import { createMachine } from 'xstate';
 import { useMachine } from '@xstate/react';
 import { ErrorParagraph } from 'components/atoms/ErrorParagraph/ErrorParagraph';
-
 interface props {
   animalName: string;
 }
