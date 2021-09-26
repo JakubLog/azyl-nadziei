@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { Wrapper, BackgroundImage, StyledButton, Buttons, BeforeAnimal, Container, Disabled } from './Animal.styles';
 import { Icon } from 'views/Adoption/Adoption.styles';
 import { useModal } from 'hooks/useModal';
-import AnimalModal from '../AnimalModal/AnimalModal';
+import AnimalModal from '../../organisms/AnimalModal/AnimalModal';
+import AdoptModal from '../../organisms/AdoptModal/AdoptModal';
 
 interface props {
   img: string;
@@ -38,7 +39,17 @@ const Animal: React.FC<props> = ({ img, name, isDisabled, type, age, description
           >
             Informacje
           </StyledButton>
-          <StyledButton as="a" href="https://airtable.com/shreNq3PECbMteKhR" target="_blank">
+          <StyledButton
+            onClick={() =>
+              openModal(
+                `Zaadoptuj`,
+                <AdoptModal animalName={name} />,
+                <div>
+                  {name}, lat {age}
+                </div>
+              )
+            }
+          >
             Zaadoptuj
           </StyledButton>
         </Buttons>
