@@ -1,10 +1,15 @@
 import React from 'react';
-import { Wrapper, Item } from './Loading.styles';
+import { Wrapper } from './Loading.styles';
+import { LoadingIcon } from 'components/atoms/LoadingIcon/LoadingIcon';
 
-const Loading: React.FC = () => {
+interface props {
+  fullView?: boolean;
+}
+
+const Loading: React.FC<props> = ({ fullView }) => {
   return (
-    <Wrapper>
-      <Item />
+    <Wrapper fullView={fullView}>
+      <LoadingIcon />
     </Wrapper>
   );
 };

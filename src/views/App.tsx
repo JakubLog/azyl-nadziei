@@ -5,9 +5,13 @@ import Error from 'components/molecules/Error/Error';
 import { useError } from 'hooks/useError';
 import Home from './Home/Home';
 import About from './About/About';
+import Adoption from './Adoption/Adoption';
+import Modal from 'components/organisms/Modal/Modal';
+import { useModal } from 'hooks/useModal';
 
 const App: React.FC = () => {
   const { error } = useError();
+  const { isOpen } = useModal();
   return (
     <>
       <MainTemplate>
@@ -18,7 +22,7 @@ const App: React.FC = () => {
           <About />
         </Route>
         <Route path="/adoption">
-          <div>Adoption path</div>
+          <Adoption />
         </Route>
         <Route path="/help">
           <div>Help path</div>
@@ -28,6 +32,7 @@ const App: React.FC = () => {
         </Route>
       </MainTemplate>
       {error ? <Error message={error} /> : null}
+      {isOpen ? <Modal /> : null}
     </>
   );
 };

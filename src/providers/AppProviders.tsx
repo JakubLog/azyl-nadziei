@@ -5,6 +5,7 @@ import { theme } from 'assets/css/theme';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ErrorProvider from 'hooks/useError';
 import { GraphQLClient, ClientContext } from 'graphql-hooks';
+import ModalProvider from 'hooks/useModal';
 
 const client = new GraphQLClient({
   url: 'https://graphql.datocms.com/',
@@ -17,12 +18,14 @@ const AppProviders: React.FC = ({ children }) => {
   return (
     <Router>
       <ErrorProvider>
-        <ClientContext.Provider value={client}>
-          <ThemeProvider theme={theme}>
-            <GlobalStyles />
-            {children}
-          </ThemeProvider>
-        </ClientContext.Provider>
+        <ModalProvider>
+          <ClientContext.Provider value={client}>
+            <ThemeProvider theme={theme}>
+              <GlobalStyles />
+              {children}
+            </ThemeProvider>
+          </ClientContext.Provider>
+        </ModalProvider>
       </ErrorProvider>
     </Router>
   );
