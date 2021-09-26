@@ -7,6 +7,7 @@ import { useError } from 'hooks/useError';
 import axios from 'axios';
 import { createMachine } from 'xstate';
 import { useMachine } from '@xstate/react';
+import { ErrorParagraph } from 'components/atoms/ErrorParagraph/ErrorParagraph';
 
 interface props {
   animalName: string;
@@ -79,7 +80,14 @@ const AdoptModal: React.FC<props> = ({ animalName }) => {
       <Wrapper>
         <form onSubmit={handleSubmit(process)}>
           <FormField label="imię" placeholder="Podaj swoje imię" {...register('name', { required: true })} />
-          <FormField label="email" type="email" placeholder="example@gmail.com" {...register('email', { required: true })} />
+          {errors.name && <ErrorParagraph>Imię nie może być puste!</ErrorParagraph>}
+          <FormField
+            label="email"
+            type="email"
+            placeholder="example@gmail.com"
+            {...register('email', { required: true, pattern: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/g })}
+          />
+          {errors.email && <ErrorParagraph>Podaj poprawny adres e-mail!</ErrorParagraph>}
           <StyledButton type="submit" state={currentState.value}>
             {currentState.matches(states.empty) ? (
               'Poproś o kontakt'
