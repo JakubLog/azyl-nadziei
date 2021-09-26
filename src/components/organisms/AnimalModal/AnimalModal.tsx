@@ -1,5 +1,6 @@
 import { InlineTitle } from 'components/atoms/InlineTitle/InlineTitle';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { AboutParagraph, List, Information } from './AnimalModal.styles';
 
 interface props {
@@ -32,6 +33,15 @@ const AnimalModal: React.FC<props> = ({ description, type, race, age, weight, is
       <AboutParagraph>{description}</AboutParagraph>
     </div>
   );
+};
+
+AnimalModal.propTypes = {
+  description: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  race: PropTypes.string.isRequired,
+  age: PropTypes.number.isRequired,
+  weight: PropTypes.number.isRequired,
+  isDisabled: PropTypes.bool.isRequired
 };
 
 export default AnimalModal;

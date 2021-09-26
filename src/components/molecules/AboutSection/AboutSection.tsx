@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Wrapper, Header, StyledTitle, StyledSubTitle, ImageWrapper, Image, Content, InnerContent, StyledParagraph } from './AboutSection.styles';
 
 interface props {
@@ -26,6 +27,13 @@ const AboutSection: React.FC<props> = ({ title, subtitle, content, imageSrc, sec
       </Content>
     </Wrapper>
   );
+};
+
+AboutSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string.isRequired,
+  sectionId: PropTypes.string.isRequired
 };
 
 export default AboutSection;

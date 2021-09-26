@@ -64,7 +64,10 @@ Animal.propTypes = {
   name: PropTypes.string.isRequired,
   isDisabled: PropTypes.bool,
   type: PropTypes.string.isRequired,
-  age: PropTypes.number.isRequired
+  age: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  weight: PropTypes.number.isRequired,
+  race: PropTypes.string.isRequired
 };
 
 export default Animal;
