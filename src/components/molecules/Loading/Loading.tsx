@@ -1,5 +1,6 @@
 import React from 'react';
-import { Wrapper, Item } from './Loading.styles';
+import { Wrapper } from './Loading.styles';
+import { LoadingIcon } from 'components/atoms/LoadingIcon/LoadingIcon';
 
 interface props {
   fullView?: boolean;
@@ -8,7 +9,7 @@ interface props {
 const Loading: React.FC<props> = ({ fullView }) => {
   return (
     <Wrapper fullView={fullView}>
-      <Item />
+      <LoadingIcon />
     </Wrapper>
   );
 };
