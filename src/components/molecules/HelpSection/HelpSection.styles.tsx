@@ -34,7 +34,7 @@ export const Content = styled.div`
   padding: 30px 15px;
   box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
   @media (min-width: 768px) {
-    padding: 25px 50px;
+    padding: 80px 100px;
     margin-top: 60px;
   }
 `;
@@ -44,6 +44,7 @@ export const StyledParagraph = styled(Paragraph)`
   font-weight: 700;
   letter-spacing: 0;
   @media (min-width: 768px) {
+    line-height: 1.5;
     font-size: 35px;
   }
 `;
