@@ -4,11 +4,11 @@ import { useError } from 'hooks/useError';
 import { gsap } from 'gsap';
 
 interface ContextProps {
-  turnOn: (links: React.RefObject<HTMLUListElement>, indicator: React.RefObject<HTMLDivElement>) => void;
+  turnOn: (links: React.RefObject<HTMLUListElement>, indicator: React.RefObject<HTMLDivElement>, timeout?: number) => void;
 }
 
 const MenuContext = createContext<ContextProps>({
-  turnOn: (links: React.RefObject<HTMLUListElement>, indicator: React.RefObject<HTMLDivElement>) => console.log('Ready!')
+  turnOn: (links: React.RefObject<HTMLUListElement>, indicator: React.RefObject<HTMLDivElement>, timeout = 0) => console.log('Ready!')
 });
 const MenuProvider: React.FC = ({ children }) => {
   const getPositionOf = (el: any) => {
@@ -24,10 +24,15 @@ const MenuProvider: React.FC = ({ children }) => {
       return document.querySelector('.active-link');
     }
   };
-  const setInitialPosition = (links: React.RefObject<HTMLUListElement>, indicator: React.RefObject<HTMLDivElement>) => {
+  const setInitialPosition = (links: React.RefObject<HTMLUListElement>, indicator: React.RefObject<HTMLDivElement>, timeout: number) => {
+    window.scrollTo(0, 0);
     if (links.current && indicator.current) {
-      const { readyX, readyY, currentWidth } = getPositionOf(findActiveElement(links));
-      gsap.set(indicator.current, { x: readyX, y: readyY, width: currentWidth });
+      setTimeout(() => {
+        const { readyX, readyY, currentWidth } = getPositionOf(findActiveElement(links));
+        timeout
+          ? gsap.to(indicator.current, { x: readyX, y: readyY, duration: 0.8, width: currentWidth })
+          : gsap.set(indicator.current, { x: readyX, y: readyY, width: currentWidth });
+      }, timeout);
     }
   };
   const goToThisElement = (el: any, indicator: React.RefObject<HTMLDivElement>, links: React.RefObject<HTMLUListElement>) => {
@@ -41,8 +46,8 @@ const MenuProvider: React.FC = ({ children }) => {
       goToThisElement(e.target, indicator, links);
     }
   };
-  const turnOn = (links: React.RefObject<HTMLUListElement>, indicator: React.RefObject<HTMLDivElement>) => {
-    setInitialPosition(links, indicator);
+  const turnOn = (links: React.RefObject<HTMLUListElement>, indicator: React.RefObject<HTMLDivElement>, timeout = 0) => {
+    setInitialPosition(links, indicator, timeout);
     if (links.current) {
       links.current.addEventListener('click', (e) => activateTab(e, indicator, links));
     }

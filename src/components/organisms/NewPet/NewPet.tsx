@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from 'graphql-hooks';
-import { Link } from 'components/atoms/Link/Link';
+import Link from 'components/atoms/Link/Link';
 import {
   Wrapper,
   Header,

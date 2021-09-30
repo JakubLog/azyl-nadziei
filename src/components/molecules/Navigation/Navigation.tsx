@@ -8,9 +8,11 @@ interface props {
   isExpanded?: boolean;
 }
 
+export let indicator: React.RefObject<HTMLDivElement>, links: React.RefObject<HTMLUListElement>;
+
 const Navigation: React.FC<props> = ({ isExpanded = false }) => {
-  const indicator = useRef<HTMLDivElement>(null);
-  const links = useRef<HTMLUListElement>(null);
+  indicator = useRef<HTMLDivElement>(null);
+  links = useRef<HTMLUListElement>(null);
 
   const { turnOn } = useMenu();
 
