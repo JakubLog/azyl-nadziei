@@ -9,6 +9,7 @@ import Adoption from './Adoption/Adoption';
 import Modal from 'components/organisms/Modal/Modal';
 import { useModal } from 'hooks/useModal';
 import Help from './Help/Help';
+import Contact from './Contact/Contact';
 
 const App: React.FC = () => {
   const { error } = useError();
@@ -29,7 +30,7 @@ const App: React.FC = () => {
           <Help />
         </Route>
         <Route path="/contact">
-          <div>Contact path</div>
+          <Contact />
         </Route>
       </MainTemplate>
       {error ? <Error message={error} /> : null}
