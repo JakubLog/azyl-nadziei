@@ -1,13 +1,35 @@
-import styled from 'styled-components';
-import { themeProps } from 'assets/css/theme';
-import { Link as RouterLink } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import { LinkBlock } from './Link.styles';
+import { useMenu } from 'hooks/useMenu';
+import { indicator, links } from 'components/molecules/Navigation/Navigation';
 
-export const Link = styled(RouterLink)`
-  color: ${({ theme }: themeProps) => theme.colors.blueDarken};
-  opacity: 0.7;
-  transition: opacity 0.3s ease-in-out;
-  text-decoration: none;
-  &:hover {
-    opacity: 1;
-  }
-`;
+interface props {
+  to: string;
+}
+
+const Link: React.FC<props> = ({ children, to }) => {
+  const linkRef = useRef<HTMLAnchorElement>(null);
+  const { turnOn } = useMenu();
+
+  useEffect(() => {
+    if (linkRef.current) {
+      linkRef.current.addEventListener('click', () => {
+        turnOn(links, indicator, 2000);
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <LinkBlock to={to} ref={linkRef}>
+      {children}
+    </LinkBlock>
+  );
+};
+
+Link.propTypes = {
+  to: PropTypes.string.isRequired
+};
+
+export default Link;

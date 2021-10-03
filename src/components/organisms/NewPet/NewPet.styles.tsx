@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { themeProps } from 'assets/css/theme';
-import { Button } from 'components/atoms/Button/Button';
 import { SubTitle } from 'components/atoms/SubTitle/SubTitle';
 import { Title } from 'components/atoms/Title/Title';
 import { Content } from 'components/atoms/Content/Content';
@@ -120,14 +119,25 @@ export const StyledContent = styled(Content)`
   }
 `;
 
-export const StyledButton = styled(Button)`
+export const StyledLink = styled.div`
   margin: 0;
   width: 100%;
   border-radius: 0;
   background-color: rgba(209, 200, 255, 0.5);
-  padding-block: 20px;
+  padding-block: 15px;
+  text-decoration: none;
+  font-size: 25px;
+  transition: 0.2s background-color ease-in;
   &:hover {
     background-color: rgba(209, 200, 255, 0.8);
+  }
+  & > * {
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   @media (min-width: 1100px) {
     position: absolute;

@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import ErrorProvider from 'hooks/useError';
 import { GraphQLClient, ClientContext } from 'graphql-hooks';
 import ModalProvider from 'hooks/useModal';
+import MenuProvider from 'hooks/useMenu';
 
 const client = new GraphQLClient({
   url: 'https://graphql.datocms.com/',
@@ -19,12 +20,14 @@ const AppProviders: React.FC = ({ children }) => {
     <Router>
       <ErrorProvider>
         <ModalProvider>
-          <ClientContext.Provider value={client}>
-            <ThemeProvider theme={theme}>
-              <GlobalStyles />
-              {children}
-            </ThemeProvider>
-          </ClientContext.Provider>
+          <MenuProvider>
+            <ClientContext.Provider value={client}>
+              <ThemeProvider theme={theme}>
+                <GlobalStyles />
+                {children}
+              </ThemeProvider>
+            </ClientContext.Provider>
+          </MenuProvider>
         </ModalProvider>
       </ErrorProvider>
     </Router>

@@ -2,60 +2,27 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper, Links, UnderLine, Link } from './Navigation.styles';
-import { gsap } from 'gsap';
+import { useMenu } from 'hooks/useMenu';
 
 interface props {
   isExpanded?: boolean;
 }
 
+export let indicator: React.RefObject<HTMLDivElement>, links: React.RefObject<HTMLUListElement>;
+
 const Navigation: React.FC<props> = ({ isExpanded = false }) => {
-  const indicator = useRef<HTMLDivElement>(null);
-  const links = useRef<HTMLUListElement>(null);
+  indicator = useRef<HTMLDivElement>(null);
+  links = useRef<HTMLUListElement>(null);
 
-  const getPositionOf = (el: any) => {
-    const { width: itemWidth, height: itemHeight, x: itemX, y: itemY } = el.getBoundingClientRect();
-    const currentWidth = itemWidth * 0.6;
-    const readyX = itemX + itemWidth / 2 - currentWidth / 2;
-    const readyY = itemY + itemHeight + 7;
-
-    return { readyX, readyY, currentWidth };
-  };
-  const findActiveElement = () => {
-    if (links.current) {
-      return document.querySelector('.active-link');
-    }
-  };
-  const setInitialPosition = () => {
-    if (links.current && indicator.current) {
-      const { readyX, readyY, currentWidth } = getPositionOf(findActiveElement());
-      gsap.set(indicator.current, { x: readyX, y: readyY, width: currentWidth });
-    }
-  };
-  const goToThisElement = (el: any) => {
-    if (links.current && indicator.current) {
-      const { readyX, readyY, currentWidth } = getPositionOf(el);
-      gsap.to(indicator.current, { x: readyX, y: readyY, duration: 0.8, width: currentWidth });
-    }
-  };
-  const activateTab = (e: any) => {
-    if (e.target.classList.contains('no-active')) {
-      goToThisElement(e.target);
-    }
-  };
-  const turnOn = () => {
-    setInitialPosition();
-    if (links.current) {
-      links.current.addEventListener('click', activateTab);
-    }
-  };
+  const { turnOn } = useMenu();
 
   useEffect(() => {
-    if (window.innerWidth > 1540) turnOn();
+    if (window.innerWidth > 1540) turnOn(links, indicator);
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 1540) turnOn();
+      if (window.innerWidth > 1540) turnOn(links, indicator);
     });
     return window.removeEventListener('resize', () => {
-      if (window.innerWidth > 1540) turnOn();
+      if (window.innerWidth > 1540) turnOn(links, indicator);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
