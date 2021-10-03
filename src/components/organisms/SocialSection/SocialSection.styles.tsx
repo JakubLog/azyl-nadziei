@@ -80,6 +80,9 @@ export const Social = styled.a<{ color?: string }>`
     opacity: 1;
     cursor: pointer;
   }
+  & > img {
+    width: 40%;
+  }
   @media (min-width: 768px) {
     width: 200px;
     height: 200px;

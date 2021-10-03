@@ -3,6 +3,8 @@ import { Wrapper, Sections, Section, StyledSubTitle, Socials, Social } from './S
 import { Button } from 'components/atoms/Button/Button';
 import { Title } from 'components/atoms/Title/Title';
 import { useHistory } from 'react-router-dom';
+import FBIcon from 'assets/img/facebook.jpg';
+import IGIcon from 'assets/img/instagram.png';
 
 const SocialSection: React.FC = () => {
   const history = useHistory();
@@ -14,10 +16,10 @@ const SocialSection: React.FC = () => {
           <StyledSubTitle>Jeżeli chcesz nas śledzić w internecie to mamy dobre wieści! Sprawdź ikonki poniżej!</StyledSubTitle>
           <Socials>
             <Social href="#" target="_blank" color="#1877F2">
-              FB
+              <img src={FBIcon} alt="Facebook Icon" />
             </Social>
             <Social href="#" target="_blank" color="#F00073">
-              IG
+              <img src={IGIcon} alt="Instagram Icon" />
             </Social>
           </Socials>
         </Section>
