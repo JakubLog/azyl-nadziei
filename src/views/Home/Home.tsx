@@ -4,13 +4,15 @@ import Hero from 'components/organisms/Hero/Hero';
 import NewPet from 'components/organisms/NewPet/NewPet';
 import SocialSection from 'components/organisms/SocialSection/SocialSection';
 import React from 'react';
+import AboutImg from 'assets/img/about.jpg';
+import HelpImg from 'assets/img/help.jpg';
 
 const Home: React.FC = () => {
   return (
     <div>
       <Hero />
       <Section
-        image="https://picsum.photos/500"
+        image={AboutImg}
         title="Trochę o nas..."
         subtitle="Chcemy aby każde zwierzę miało kochającą rodzinę."
         content={
@@ -27,7 +29,7 @@ const Home: React.FC = () => {
       />
       <NewPet />
       <Section
-        image="https://picsum.photos/500"
+        image={HelpImg}
         title="Chciałbyś pomóc?"
         subtitle="Jeżeli chcesz nam pomóc lub rozpocząć współpracę,
         odwiedź naszą specjalną podstronę."
