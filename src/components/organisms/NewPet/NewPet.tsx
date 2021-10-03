@@ -13,16 +13,13 @@ import {
   DescriptionTitle,
   ContentWrapper,
   StyledContent,
-  StyledButton
+  StyledLink
 } from './NewPet.styles';
-import { useHistory } from 'react-router-dom';
 import Loading from 'components/molecules/Loading/Loading';
 
 const NewPet: React.FC = () => {
   const query = `{allAnimals(first: 1) {id,name,description,image{url}}}`;
   const { data, loading, error } = useQuery(query);
-
-  const history = useHistory();
 
   if (error) {
     return (
@@ -44,7 +41,7 @@ const NewPet: React.FC = () => {
                   <DescriptionTitle>Error {error?.httpError}</DescriptionTitle>
                   <StyledContent>Prosimy o skontaktowanie się z właścicielem serwisu w celu przekazania problemu developer'owi.</StyledContent>
                 </ContentWrapper>
-                <StyledButton>Zgłoś błąd</StyledButton>
+                <StyledLink>Zgłoś błąd</StyledLink>
               </Description>
             </Container>
           )}
@@ -73,7 +70,9 @@ const NewPet: React.FC = () => {
                   <DescriptionTitle>{data.allAnimals[0].name}</DescriptionTitle>
                   <StyledContent>{data.allAnimals[0].description}</StyledContent>
                 </ContentWrapper>
-                <StyledButton onClick={() => history.push('/adoption')}>Czytaj więcej</StyledButton>
+                <StyledLink>
+                  <Link to="adoption">Czytaj więcej</Link>
+                </StyledLink>
               </Description>
             </>
           )}
