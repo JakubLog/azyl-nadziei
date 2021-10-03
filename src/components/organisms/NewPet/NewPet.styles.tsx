@@ -3,7 +3,6 @@ import { themeProps } from 'assets/css/theme';
 import { SubTitle } from 'components/atoms/SubTitle/SubTitle';
 import { Title } from 'components/atoms/Title/Title';
 import { Content } from 'components/atoms/Content/Content';
-import Link from 'components/atoms/Link/Link';
 
 export const Wrapper = styled.div`
   margin-bottom: 60px;
