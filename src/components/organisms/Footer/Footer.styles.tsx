@@ -95,3 +95,22 @@ export const CatImage = styled.img`
     z-index: -1;
   }
 `;
+
+export const SocialLinks = styled.div`
+  & > * {
+    margin: 0 !important;
+    padding: 0 !important;
+    &:not(:last-child) {
+      margin-right: 10px !important;
+      margin-top: 5px !important;
+      @media (min-width: 768px) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+  button,
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+`;
