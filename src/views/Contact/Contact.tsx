@@ -1,8 +1,7 @@
 import React from 'react';
 import SiteTitle from 'components/molecules/SiteTitle/SiteTitle';
-import styled from 'styled-components';
-
-export const Wrapper = styled.div``;
+import { Wrapper } from './Contact.styles';
+import QAA from 'components/organisms/QAA/QAA';
 
 const Contact: React.FC = () => {
   return (
@@ -12,6 +11,7 @@ const Contact: React.FC = () => {
         subtitle="Masz pytania? Chcesz zaadoptować zwierzę?
 Jesteśmy tu dla ciebie!"
       />
+      <QAA />
     </Wrapper>
   );
 };
