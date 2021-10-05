@@ -21,4 +21,11 @@ export const Wrapper = styled.details`
       transform: scaleX(1);
     }
   }
+  @media (min-width: 768px) {
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: ${({ theme }: themeProps) => theme.shadows.primary};
+  }
 `;

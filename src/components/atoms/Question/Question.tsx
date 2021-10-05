@@ -6,4 +6,8 @@ export const Question = styled.summary`
   list-style-type: none;
   letter-spacing: 1px;
   text-align: center;
+  @media (min-width: 768px) {
+    font-size: 30px;
+    text-align: left;
+  }
 `;

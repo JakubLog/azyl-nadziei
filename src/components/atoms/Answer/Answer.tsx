@@ -30,4 +30,11 @@ export const Answer = styled.div`
     transform: translateX(-2%);
     animation: ${fadeInText} 0.2s 0.5s ease-in 1 forwards;
   }
+  @media (min-width: 768px) {
+    padding: 30px;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    border-radius: 0 5px 15px 5px;
+  }
 `;
