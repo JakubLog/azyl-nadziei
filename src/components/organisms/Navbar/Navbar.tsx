@@ -12,6 +12,7 @@ const Navbar: React.FC = () => {
   const logo = useRef<HTMLAnchorElement>(null);
   useEffect(() => {
     if (window.innerWidth > 750 && logo.current) {
+      gsap.set(logo.current, { visibility: 'visible' });
       gsap.from(logo.current, { opacity: 0, duration: 2, delay: 0.5 });
     }
   }, []);
@@ -19,7 +20,7 @@ const Navbar: React.FC = () => {
   return (
     <Wrapper>
       <Body>
-        <Logo ref={logo}>
+        <Logo style={{ visibility: 'hidden' }} ref={logo}>
           <LogoSource />
         </Logo>
         <Expand onClick={toggleState}>

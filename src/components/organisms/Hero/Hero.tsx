@@ -21,12 +21,18 @@ const Hero: React.FC = () => {
   useEffect(() => {
     if (window.innerWidth > 750) {
       const tl = gsap.timeline({ delay: 0.5 });
-      tl.from(image.current, { opacity: 0, duration: 2 })
-        .from(title.current, { opacity: 0, duration: 1, y: 10 })
+      tl.set(title.current, { visibility: 'visible' })
+        .set(subtitle.current, { visibility: 'visible' })
+        .set(content.current, { visibility: 'visible' })
+        .set(button.current, { visibility: 'visible' })
+        .set(image.current, { visibility: 'visible' });
+
+      tl.from(image.current, { opacity: 0, duration: 1 })
+        .from(title.current, { opacity: 0, duration: 0.8, y: 10 })
         .addLabel('text')
-        .from(subtitle.current, { opacity: 0, duration: 0.7, x: 20 })
-        .from(content.current, { opacity: 0, duration: 0.7, x: -20 }, 'text')
-        .from(button.current, { opacity: 0, y: 30, duration: 1.5 });
+        .from(subtitle.current, { opacity: 0, duration: 0.8, x: 20 })
+        .from(content.current, { opacity: 0, duration: 0.8, x: -20 }, 'text')
+        .from(button.current, { opacity: 0, y: 30, duration: 1 });
     }
   }, []);
 
