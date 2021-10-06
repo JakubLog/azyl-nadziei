@@ -28,11 +28,11 @@ const Hero: React.FC = () => {
         .set(image.current, { visibility: 'visible' });
 
       tl.from(image.current, { opacity: 0, duration: 1 })
-        .from(title.current, { opacity: 0, duration: 0.8, y: 10 })
         .addLabel('text')
-        .from(subtitle.current, { opacity: 0, duration: 0.8, x: 20 })
-        .from(content.current, { opacity: 0, duration: 0.8, x: -20 }, 'text')
-        .from(button.current, { opacity: 0, y: 30, duration: 1 });
+        .from(title.current, { opacity: 0, duration: 1, y: 10 })
+        .from(subtitle.current, { opacity: 0, duration: 1, x: 10 }, 'text')
+        .from(content.current, { opacity: 0, duration: 1, x: -10 }, 'text')
+        .from(button.current, { opacity: 0, y: 10, duration: 1 }, 'text');
     }
   }, []);
 
