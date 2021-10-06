@@ -15,10 +15,14 @@ const SiteTitle: React.FC<props> = ({ title, subtitle }) => {
   useEffect(() => {
     if (window.innerWidth > 750) {
       const tl = gsap.timeline({ delay: 0.5 });
-      tl.from(titleRef.current, { opacity: 0, y: 30, duration: 1.5, ease: Back.easeOut.config(7) }).from(subtitleRef.current, {
-        opacity: 0,
-        duration: 2
-      });
+      tl.from(titleRef.current, { opacity: 0, y: 10, duration: 1.5, ease: Back.easeOut.config(7) }).from(
+        subtitleRef.current,
+        {
+          opacity: 0,
+          duration: 2
+        },
+        '-=1.5'
+      );
     }
   }, []);
 
