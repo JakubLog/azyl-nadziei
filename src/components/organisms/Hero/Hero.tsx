@@ -19,14 +19,13 @@ const Hero: React.FC = () => {
   const content = useRef<HTMLParagraphElement>(null);
   const button = useRef<HTMLButtonElement>(null);
   useEffect(() => {
+    const tl = gsap.timeline({ delay: 0.5 });
+    tl.set(title.current, { visibility: 'visible' })
+      .set(subtitle.current, { visibility: 'visible' })
+      .set(content.current, { visibility: 'visible' })
+      .set(button.current, { visibility: 'visible' })
+      .set(image.current, { visibility: 'visible' });
     if (window.innerWidth > 750) {
-      const tl = gsap.timeline({ delay: 0.5 });
-      tl.set(title.current, { visibility: 'visible' })
-        .set(subtitle.current, { visibility: 'visible' })
-        .set(content.current, { visibility: 'visible' })
-        .set(button.current, { visibility: 'visible' })
-        .set(image.current, { visibility: 'visible' });
-
       tl.from(image.current, { opacity: 0, duration: 1 })
         .addLabel('text')
         .from(title.current, { opacity: 0, duration: 1, y: 10 })
