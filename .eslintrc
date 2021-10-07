@@ -6,9 +6,10 @@
     "plugin:prettier/recommended",
     "prettier",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@eslint-plugin-cypress/recommended"
   ],
-  "plugins": ["prettier", "@typescript-eslint"],
+  "plugins": ["prettier", "@typescript-eslint", "eslint-plugin-cypress"],
   "rules": {
     "prettier/prettier": ["error", { "singleQuote": true }]
   },

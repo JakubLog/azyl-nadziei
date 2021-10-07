@@ -12,6 +12,7 @@
     "@types/react-dom": "^17.0.9",
     "@xstate/react": "^1.6.1",
     "axios": "^0.21.4",
+    "colorette": "^2.0.15",
     "graphql-hooks": "^5.4.0",
     "gsap": "^3.7.1",
     "react": "^17.0.2",
@@ -29,6 +30,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:e2e": "cypress open --project ./src/e2e",
     "eject": "react-scripts eject"
   },
   "browserslist": {
@@ -44,11 +46,14 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.1",
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "^5.1.13",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
+    "cypress": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-prettier": "^3.4.1",
     "prettier": "^2.3.2"
   }
