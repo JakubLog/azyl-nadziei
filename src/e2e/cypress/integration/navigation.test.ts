@@ -22,6 +22,14 @@ describe('Navigation | Azyl Nadziei', () => {
     cy.findByText('Kontakt').should('exist').click();
     cy.findByText(/masz pytania?/i).should('exist');
   });
+  it('Checks button mechanisms', () => {
+    cy.visit('/');
+    cy.findByText('Chcę pomóc!').click();
+    cy.findByText('Wpłać darowiznę').should('exist');
+    cy.go('back');
+    cy.findByText('Zobacz naszą rodzinę').should('exist').click();
+    cy.findAllByText('Informacje').should('exist');
+  });
 });
 
 export {};
