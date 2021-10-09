@@ -10,18 +10,28 @@
     "@types/node": "^12.20.21",
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
+    "@xstate/react": "^1.6.1",
+    "axios": "^0.21.4",
+    "graphql-hooks": "^5.4.0",
+    "gsap": "^3.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.16.0",
+    "react-router-dom": "^5.2.1",
     "react-scripts": "4.0.3",
+    "react-share": "^4.4.0",
     "styled-components": "^5.3.1",
     "typescript": "^4.4.2",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "xstate": "^4.25.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "browserslist": {
     "production": [
@@ -36,10 +46,30 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.3.10",
+    "@storybook/addon-essentials": "^6.3.10",
+    "@storybook/addon-links": "^6.3.10",
+    "@storybook/node-logger": "^6.3.10",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.10",
+    "@types/react-router-dom": "^5.1.8",
+    "@types/styled-components": "^5.1.13",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.1",
     "prettier": "^2.3.2"
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   }
 }
