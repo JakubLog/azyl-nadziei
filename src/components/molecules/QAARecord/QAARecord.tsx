@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Answer } from 'components/atoms/Answer/Answer';
 import { Question } from 'components/atoms/Question/Question';
@@ -10,11 +10,12 @@ interface props {
 }
 
 const QAARecord: React.FC<props> = ({ question, answer }) => {
+  const [isActive, setActiveClass] = useState(false);
   return (
     <Wrapper>
-      <Question>{question}</Question>
+      <Question onClick={() => setActiveClass((prev) => !prev)}>{question}</Question>
       <Answer>
-        <p>{answer}</p>
+        <p className={isActive ? 'active' : 'inactive'}>{answer}</p>
       </Answer>
     </Wrapper>
   );

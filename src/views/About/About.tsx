@@ -46,14 +46,18 @@ const About: React.FC = () => {
             <p>Loading...</p>
           ) : (
             <ul>
-              {reports.map(({ year, file: { url } }: { year: string; file: { url: string } }) => (
-                <li>
-                  <b>Sprawozdanie za rok {year} </b> |{' '}
-                  <StyledLink target="_blank" href={url}>
-                    Sprawdź tutaj
-                  </StyledLink>
-                </li>
-              ))}
+              {reports.length !== 0 ? (
+                reports.map(({ year, file: { url } }: { year: string; file: { url: string } }) => (
+                  <li>
+                    <b>Sprawozdanie za rok {year} </b> |{' '}
+                    <StyledLink target="_blank" href={url}>
+                      Sprawdź tutaj
+                    </StyledLink>
+                  </li>
+                ))
+              ) : (
+                <p>Obecnie nie ma tutaj żadnych sprawozdań!</p>
+              )}
             </ul>
           )
         }

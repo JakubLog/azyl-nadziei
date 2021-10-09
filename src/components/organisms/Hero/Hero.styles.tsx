@@ -10,6 +10,9 @@ export const Wrapper = styled.div`
   text-align: center;
   padding-inline: 35px;
   margin-bottom: 60px;
+  * {
+    visibility: hidden;
+  }
   @media (min-width: 768px) {
     position: relative;
     align-items: flex-end;
