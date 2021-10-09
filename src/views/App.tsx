@@ -1,7 +1,7 @@
 import MainTemplate from 'components/templates/MainTemplate';
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Error from 'components/molecules/Error/Error';
+import Error from 'components/molecules/FormField/Error/Error';
 import { useError } from 'hooks/useError';
 import Home from './Home/Home';
 import About from './About/About';
