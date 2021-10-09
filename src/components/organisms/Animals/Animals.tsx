@@ -5,6 +5,7 @@ import { useError } from 'hooks/useError';
 import React, { useEffect, useState } from 'react';
 import { Wrapper, StyledTitle } from './Animals.styles';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const setCookie = (name: string, value: any, days: number) => {
   let expires = '';
   if (days) {
