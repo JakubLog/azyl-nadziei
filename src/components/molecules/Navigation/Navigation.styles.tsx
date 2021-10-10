@@ -17,6 +17,7 @@ export const Wrapper = styled.div<{ isExpanded: boolean }>`
   opacity: ${({ isExpanded }) => (isExpanded ? '1' : '0')};
   pointer-events: ${({ isExpanded }) => (isExpanded ? 'unset' : 'none')};
   @media (min-width: 768px) {
+    pointer-events: unset;
     position: static;
     width: 50%;
     transform: unset;
