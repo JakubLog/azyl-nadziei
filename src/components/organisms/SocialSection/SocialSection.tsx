@@ -15,10 +15,10 @@ const SocialSection: React.FC = () => {
           <Title>Social Media</Title>
           <StyledSubTitle>Jeżeli chcesz nas śledzić w internecie to mamy dobre wieści! Sprawdź ikonki poniżej!</StyledSubTitle>
           <Socials>
-            <Social href="#" target="_blank" color="#1877F2">
+            <Social href="https://www.facebook.com/AzylNadziei" target="_blank" color="#1877F2">
               <img src={FBIcon} alt="Facebook Icon" />
             </Social>
-            <Social href="#" target="_blank" color="#F00073">
+            <Social href="https://www.instagram.com/azyl_nadziei/" target="_blank" color="#F00073">
               <img src={IGIcon} alt="Instagram Icon" />
             </Social>
           </Socials>
