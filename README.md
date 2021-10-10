@@ -1,46 +1,80 @@
-# Getting Started with Create React App
+# Website for student council in my school 👨‍⚖️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div style="display: flex;">
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/jakublog/azyl-nadziei">
+  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/jakublog/azyl-nadziei">
+</div>
+<div style="display: flex;">
+  <img alt="GitHub package.json dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/jakublog/azyl-nadziei/react">
+</div>
 
-## Available Scripts
+## About ✍️
 
-In the project directory, you can run:
+<img src="https://socialify.git.ci/JakubLog/azyl-nadziei/image?description=1&font=Inter&language=1&owner=1&pattern=Charlie%20Brown&theme=Dark" alt="azyl-nadziei" width="640" height="320"/>
 
-### `npm start`
+Site for polish foundation with homeless animals. 🐶
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Mobile version: yes 🎈
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+PageInsights scores:
 
-### `npm test`
+- Mobile: **[89/100](https://developers.google.com/speed/pagespeed/insights/?hl=pl&url=https%3A%2F%2Fjakublog.github.io%2Fazyl-nadziei%2F)**
+- Desktop: **[99/100](https://developers.google.com/speed/pagespeed/insights/?hl=pl&url=https%3A%2F%2Fjakublog.github.io%2Fazyl-nadziei%2F&tab=desktop)**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### How can I try it? 🤔
 
-### `npm run build`
+It's not my private project so I can't share pass to account or <br/>
+create private server with code.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Check official site: **https://azylnadziei.pl/** <br />
+You can check this site on GH Pages: **https://jakublog.github.io/azyl-nadziei**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## About UX/UI 🖌️
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+All of styles and views are designed by Author. <br/>
+Colors were selected by Author too. <br/>
+Single components are from Material UI.
 
-### `npm run eject`
+Figma project: [click here](https://www.figma.com/file/FI75EP2dx8qwUvQU4gyycW/Azyl-nadzieii?node-id=0%3A1) <br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Instalation steps 🛠️
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Copy this repository
+```
+gh repo clone JakubLog/azyl-nadziei
+cd ./azyl-nadziei
+```
+or
+```
+git clone https://github.com/JakubLog/azyl-nadziei.git
+cd ./azyl-nadziei
+```
+2. Install required packages
+```
+npm install
+```
+3. Open App in Development mode
+```
+npm start
+```
+Open https://localhost:3000 to view in the browser.
+And that's all!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Project structure 💡
 
-## Learn More
+It's full and still supported project based on Atomic design. ⚛️
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technological facilities 👷
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Application is based on React (TypeScript). <br/>
+Inside you can find:
+
+- Integrations with DatoCMS 💧
+- Animation with GSAP ⭐
+- StoryBook stories 📖
+- Webhooks integrations (Integromat) 🧰
+- Unit tests 👷
+- E2E tests 👷‍♂️
+
+This project is hosted on GitHub Pages with SSL protocol. ✨
