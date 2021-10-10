@@ -23,9 +23,6 @@ PageInsights scores:
 
 ### How can I try it? 🤔
 
-It's not my private project so I can't share pass to account or <br/>
-create private server with code.
-
 Check official site: **https://azylnadziei.pl/** <br />
 You can check this site on GH Pages: **https://jakublog.github.io/azyl-nadziei**
 
