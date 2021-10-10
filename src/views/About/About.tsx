@@ -42,24 +42,24 @@ const About: React.FC = () => {
         title="Sprawozdania"
         subtitle="Fundacja Azyl Nadziei"
         content={
-          loading ? (
-            <p>Loading...</p>
-          ) : (
-            <ul>
-              {reports.length !== 0 ? (
-                reports.map(({ year, file: { url } }: { year: string; file: { url: string } }) => (
+          <>
+            {loading ? (
+              <p>Loading...</p>
+            ) : reports.length !== 0 ? (
+              reports.map(({ year, file: { url } }: { year: string; file: { url: string } }) => (
+                <ul>
                   <li>
                     <b>Sprawozdanie za rok {year} </b> |{' '}
                     <StyledLink target="_blank" href={url}>
                       Sprawdź tutaj
                     </StyledLink>
                   </li>
-                ))
-              ) : (
-                <p>Obecnie nie ma tutaj żadnych sprawozdań!</p>
-              )}
-            </ul>
-          )
+                </ul>
+              ))
+            ) : (
+              <p>Obecnie nie ma tutaj żadnych sprawozdań!</p>
+            )}
+          </>
         }
         imageSrc="https://picsum.photos/500"
       />

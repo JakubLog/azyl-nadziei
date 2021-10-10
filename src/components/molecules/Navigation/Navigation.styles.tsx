@@ -13,9 +13,11 @@ export const Wrapper = styled.div<{ isExpanded: boolean }>`
   transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out;
   box-shadow: inset 0px 5px 15px -5px #000000;
   color: white;
-  transform: ${({ isExpanded }) => (isExpanded ? 'unset' : 'translateX(100%)')};
+  transform: ${({ isExpanded }) => (isExpanded ? 'unset' : 'translateY(100%)')};
   opacity: ${({ isExpanded }) => (isExpanded ? '1' : '0')};
+  pointer-events: ${({ isExpanded }) => (isExpanded ? 'unset' : 'none')};
   @media (min-width: 768px) {
+    pointer-events: unset;
     position: static;
     width: 50%;
     transform: unset;

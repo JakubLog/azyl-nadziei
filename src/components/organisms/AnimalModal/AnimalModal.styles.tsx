@@ -32,7 +32,10 @@ export const Information = styled.div`
   width: 100%;
   background-color: #f85f5f;
   opacity: 0.8;
-  font-size: 14px;
+  font-size: 12px;
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
   text-align: center;
   padding-block: 3px;
   color: white;
