@@ -1,4 +1,4 @@
-# Website for student council in my school 👨‍⚖️
+# Azyl Nadziei Foundation 🐱
 
 <div style="display: flex;">
   <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/jakublog/azyl-nadziei">
