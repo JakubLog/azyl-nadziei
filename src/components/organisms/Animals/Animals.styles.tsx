@@ -6,11 +6,14 @@ export const Wrapper = styled.div`
   position: relative;
   display: grid;
   grid-gap: 50px;
-  grid-template-columns: repeat(auto-fit, 380px);
+  grid-template-columns: repeat(auto-fit, 340px);
   grid-template-rows: auto;
   padding-inline: 100px;
   margin-top: 60px;
   justify-content: center;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, 380px);
+  }
 `;
 
 export const StyledTitle = styled(Title)`

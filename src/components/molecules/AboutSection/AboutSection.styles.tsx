@@ -135,7 +135,7 @@ export const StyledParagraph = styled(Paragraph)`
   text-align: justify;
   letter-spacing: 2px;
   display: -webkit-box;
-  -webkit-line-clamp: 27;
+  -webkit-line-clamp: 25;
   -webkit-box-orient: vertical;
   overflow: hidden;
   @media (min-width: 768px) {
