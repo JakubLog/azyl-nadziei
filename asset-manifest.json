@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/azyl-nadziei/static/js/main.15d72143.chunk.js",
-    "main.js.map": "/azyl-nadziei/static/js/main.15d72143.chunk.js.map",
+    "main.js": "/azyl-nadziei/static/js/main.c3c4e5c4.chunk.js",
+    "main.js.map": "/azyl-nadziei/static/js/main.c3c4e5c4.chunk.js.map",
     "runtime-main.js": "/azyl-nadziei/static/js/runtime-main.97ccf887.js",
     "runtime-main.js.map": "/azyl-nadziei/static/js/runtime-main.97ccf887.js.map",
     "static/js/2.79d00702.chunk.js": "/azyl-nadziei/static/js/2.79d00702.chunk.js",
@@ -19,6 +19,6 @@
   "entrypoints": [
     "static/js/runtime-main.97ccf887.js",
     "static/js/2.79d00702.chunk.js",
-    "static/js/main.15d72143.chunk.js"
+    "static/js/main.c3c4e5c4.chunk.js"
   ]
 }
