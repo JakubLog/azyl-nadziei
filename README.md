@@ -30,7 +30,12 @@ You can check this site on GH Pages: **https://jakublog.github.io/azyl-nadziei**
 
 All of styles and views are designed by Author. <br/>
 Colors were selected by Author too. <br/>
-Single components are from Material UI.
+
+![image](https://user-images.githubusercontent.com/77537823/140679575-38ecd397-c15a-46b2-a0b5-3e9db91081b2.png)
+![image](https://user-images.githubusercontent.com/77537823/140679619-4328dcfa-a7e9-4a9a-a64d-ca27e382b7be.png)
+![image](https://user-images.githubusercontent.com/77537823/140679646-919f6b2e-93f9-4e1d-be7b-20537ebc116e.png)
+![image](https://user-images.githubusercontent.com/77537823/140679667-b642b0c4-83f3-4938-96cb-12ca63885eab.png)
+![image](https://user-images.githubusercontent.com/77537823/140679686-8f872a85-401d-4f36-82a6-e4538f5756fa.png)
 
 Figma project: [click here](https://www.figma.com/file/FI75EP2dx8qwUvQU4gyycW/Azyl-nadzieii?node-id=0%3A1) <br>
 
